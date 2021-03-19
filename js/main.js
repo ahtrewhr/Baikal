@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
         for(let i = 0; i < img.length; i++) {
             let card = document.createElement('div');
             card.classList.add('card');
-            card.style.background = `url('../images/${img[i]}')`;
+            card.style.background = `url('images/${img[i]}')`;
             card.style.backgroundSize = 'cover';
             card.style.transform = `rotate(${randomInt(-15, 15)}deg) translate(${randomInt(-40, 40)}px, ${randomInt(-40, 40)}px)`;
             photoWrapper.append(card);
