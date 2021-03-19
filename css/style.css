@@ -1,0 +1,284 @@
+html {
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    display: inline-block;
+}
+
+ul,
+li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+p {
+    margin: 0;
+}
+
+body {
+    position: relative;
+    overflow: hidden;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 400;
+}
+
+.container {
+    padding: 0 15px;
+    max-width: 1230px;
+    margin: 120px auto;
+}
+
+/* MENU */
+
+header {
+    position: fixed;
+    z-index: 5;
+    left: 50%;
+    top: 2%;
+    transform: translateX(-50%)
+}
+
+ul.pagination {
+    display: flex;
+}
+
+li.pagination__link {
+    padding: 15px;
+    background-color: #000;
+    color: #fff;
+    font-size: 20px;
+    transition: all .3s;
+    border-bottom: 2px solid #000;
+    cursor: pointer;
+}
+
+li.pagination__link + .pagination__link {
+    border-left: 1px solid #c0c0c0;
+}
+
+li.pagination__link.active {
+    border-bottom: 2px solid #c0c0c0;
+}
+
+/* SECTION */
+
+section {
+    width: 100%;
+    height: 100vh;
+    font-size: 30px;
+    transition: all 0.5s;
+    visibility: hidden;
+    position: absolute;
+    z-index: 3;
+}
+
+section.active {
+    visibility: visible;
+    transform: translateX(0);
+    z-index: 4;
+}
+
+section.main.prev-slide {
+    transform: translateX(-100%);
+}
+
+section.main.next-slide {
+    transform: translateY(-100%);
+}
+
+section.geography.next-slide {
+    transform: translateX(100%);
+}
+
+section.geography.prev-slide {
+    transform: translateY(-100%);
+}
+
+section.history.next-slide {
+    transform: translateY(100%);
+}
+
+section.history.prev-slide {
+    transform: translateX(100%);
+}
+
+section.tourism.next-slide {
+    transform: translateX(-100%);
+}
+
+section.tourism.prev-slide {
+    transform: translateY(-100%);
+}
+
+section.gallery.next-slide {
+    transform: translateY(100%);
+}
+
+section.gallery.prev-slide {
+    transform: translateY(100%);
+}
+
+.slider__item {
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.slider .slick-dots button {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #0B0B0B;
+    border: none;
+    padding: 0;
+    font-size: 0;
+    cursor: pointer;
+    outline: none;
+}
+
+.slider .slick-dots .slick-active button {
+    background-color: #fff;
+}
+
+.slider .slick-dots li {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.slider .slick-dots {
+    margin: -55px auto 0;
+    position: relative;
+    z-index: 6;
+    max-width: 1230px;
+    padding: 0 15px;
+}
+
+.description__text {
+    max-width: 700px;
+    margin-top: 40px;
+    background-color: rgba(175,175,173, 0.7);
+    border-radius: 15px;
+    padding: 20px;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.description__text p + p {
+    margin-top: 20px;
+}
+
+/* SECTION MAIN */
+
+section.main .content__wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+section.main h1 {
+    text-align: right;
+    font-size: 96px;
+    line-height: 112px;
+}
+
+section.main .description__text {
+    float: right;
+}
+
+/* SECTION GEOGRAPHY */
+
+section.geography {
+    background-image: url('../images/geography-bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+section.geography .description__text {
+    max-width: 950px;
+}
+
+section.geography .description__text p + p {
+    margin-top: 20px;
+}
+
+section.geography blockquote {
+    margin-inline-start: 50px;
+}
+
+section.geography cite {
+    text-align: right;
+    float: right;
+    margin-bottom: 40px;
+}
+
+/* SECTION HISTORY */
+
+section.history {
+    background-image: url('../images/history-bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* SECTION TOURISM */
+
+section.tourism {
+    background-image: url('../images/tourism-bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+section.tourism .description__text {
+    max-width: 100%;
+}
+
+
+/* SECTION GALLERY */
+
+section.gallery {
+    z-index: 2;
+    background-image: url('../images/gallery-bg.png');
+}
+
+section.gallery .photo__wrapper {
+    margin-top: 50px;
+    padding: 30px;
+    min-height: 400px;
+    position: relative;
+}
+
+section.gallery .card {
+    width: 80%;
+    height: 80%;
+    box-shadow: 3px 3px 5px #333;
+    position: absolute;
+    transition: all ease 4s;
+    left: 10%;
+    top: 15%;
+    cursor: pointer;
+}
+
+section.gallery .card.hide {
+    left: -9999px;
+}
+
+section.gallery p.spec {
+    margin-top: 40px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 16px;
+    font-style: italic;
+}
